@@ -27,8 +27,8 @@ public class FictionBook extends Book implements Borrowable{
             }else if(copies >= 0 ){
                 System.out.println("Kirja " + title + " on nyt lainattu.");
                 borrowed = borrowed + 1;
+           }
         }
-        
     
     }
 
