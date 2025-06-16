@@ -68,7 +68,7 @@ public class App {
                             }
                         }
                         if(löytykö == 0){
-                            System.out.println("Kirjaa ei löytynyt tai sitä ei voi lainata.");
+                            System.out.println("Kirjaa  " + borrowName + " ei enään ole lainattavissa!");
                         }
                         break;
                     case 4:
