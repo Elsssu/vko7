@@ -47,7 +47,7 @@ public class App {
                             library.addBook(newNonFictionBook);
                             System.out.println("Kirja lisätty kirjastoon!");
                         }else{
-                            System.out.println("Virheellinen kirjavalinta.");
+                            System.out.println("Virheellinen kirjatyyppi.");
                         }
                         break;
                     case 2:
@@ -60,9 +60,9 @@ public class App {
                         ArrayList<Book> books = library.getBooks();
                         for(Book book : books){
                             if(book instanceof FictionBook){
-                                String title2 = ((FictionBook)book).getTitle();
+                                String title2 = book.getTitle();
                                 if(title2.equals(borrowName)){
-                                    ((FictionBook)book).borrow();
+                                    ((Borrowable)book).borrow();
                                     löytykö = 1;
                                 }            
                             }
@@ -76,7 +76,7 @@ public class App {
                         String returnName = sc.nextLine();
                         ArrayList<Book> books2= library.getBooks();
                         for(Book book : books2){
-                            if(book instanceof FictionBook){
+                            if(book instanceof Borrowable){
                                 String title2 = ((FictionBook)book).getTitle();
                                 if(title2.equals(returnName)){
                                     ((FictionBook)book).returnBook();
