@@ -3,7 +3,7 @@ package main;
 public class FictionBook extends Book implements Borrowable{
     private int borrowed;
     private int borrowable;
-
+  
     public FictionBook(String title, String author, int pages, int copies){
         super(title, author, pages, copies);
         this.borrowed = 0;
@@ -16,7 +16,7 @@ public class FictionBook extends Book implements Borrowable{
     }
 
     public void borrow(){
-        if(borrowable == 1){
+        if(this instanceof FictionBook){
             if(copies <= 0){
             System.out.println("Kirjaa " + title + " ei enään ole lainattavissa!");
             
