@@ -1,5 +1,6 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
@@ -7,6 +8,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         Library library = new Library();
+        FictionBook fictionbook = new FictionBook(null, null, 0, 0);
         boolean exit = false;
         while(!exit) {
             System.out.println("1) Lisää kirja");
@@ -49,14 +51,39 @@ public class App {
                         }
                         break;
                     case 2:
-                        
                         library.listBooks();
                         break;
-                    case 4:
-
+                    case 3:
+                        System.out.println("Anna lainattavan kirjan nimi:");
+                        int löytykö = 0;
+                        String borrowName = sc.nextLine();
+                        ArrayList<Book> books = library.getBooks();
+                        for(Book book : books){
+                            if(book instanceof FictionBook){
+                                String title2 = ((FictionBook)book).getTitle();
+                                if(title2.equals(borrowName)){
+                                    ((FictionBook)book).borrow();
+                                    löytykö = 1;
+                                }            
+                            }
+                        }
+                        if(löytykö == 0){
+                            System.out.println("Kirjaa ei löytynyt tai sitä ei voi lainata.");
+                        }
                         break;
-                    case 5:
-
+                    case 4:
+                        System.out.println("Anna palautettavan kirjan nimi:");
+                        String returnName = sc.nextLine();
+                        ArrayList<Book> books2= library.getBooks();
+                        for(Book book : books2){
+                            if(book instanceof FictionBook){
+                                String title2 = ((FictionBook)book).getTitle();
+                                if(title2.equals(returnName)){
+                                    ((FictionBook)book).returnBook();
+                                }            
+                            }
+                        }
+                        
                         break;
                     case 0:
                         System.out.println("Kiitos ohjelman käytöstä.");
