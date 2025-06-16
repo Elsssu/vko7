@@ -6,7 +6,6 @@ public class FictionBook extends Book implements Borrowable{
     public FictionBook(String title, String author, int pages, int copies){
         super(title, author, pages, copies);
         this.borrowed = 0;
-        this.borrowable = 1;
     }
 
     public String categorize(){
