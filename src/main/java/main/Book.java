@@ -22,4 +22,8 @@ public abstract class Book {
     }
 
     abstract String categorize();
+
+    public String getTitle(){
+        return title;
+    }
 }
