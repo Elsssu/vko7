@@ -16,16 +16,16 @@ public class FictionBook extends Book implements Borrowable{
     public void borrow(){
         if (!(this instanceof FictionBook)) {
             System.out.println("Kirjaa " + title + " ei enään ole lainattavissa!");
-        }else{
-            if(copies <= 0){
-                System.out.println("Kirjaa " + title + " ei enään ole lainattavissa!");
-            
-            }else if( copies > 0){
-                this.copies = copies - 1;
-                System.out.println("Kirja " + title + " on nyt lainattu.");
-                borrowed = borrowed + 1;
-            }
+            return;
+        if(copies <= 0){
+            System.out.println("Kirjaa " + title + " ei enään ole lainattavissa!");
+        
+        }else if( copies > 0){
+            copies--;
+            System.out.println("Kirja " + title + " on nyt lainattu.");
+            borrowed++;
         }
+        
     
     }
 
@@ -33,10 +33,10 @@ public class FictionBook extends Book implements Borrowable{
         if( borrowed <=0){
             System.out.println("Kirja " + title + " ei ole lainassa.");
         }else{
-            borrowed = borrowed - 1;
+            borrowed--;
             System.out.println("Kirja " + title + " on palautettu.");
         }
-        this.copies = copies + 1;
+        copies++;
     }
 
     public int copyAmount(){
