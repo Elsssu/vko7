@@ -27,7 +27,6 @@ public class FictionBook extends Book implements Borrowable{
             }else if(copies >= 0 ){
                 System.out.println("Kirja " + title + " on nyt lainattu.");
                 borrowed = borrowed + 1;
-            }
         }
         
     
@@ -43,8 +42,9 @@ public class FictionBook extends Book implements Borrowable{
         }else{
             borrowed = borrowed - 1;
             System.out.println("Kirja " + title + " on palautettu.");
+            copies = copies + 1;
         }
-        copies = copies + 1;
+        
     }
 
     public int copyAmount(){
