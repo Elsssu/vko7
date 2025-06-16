@@ -2,7 +2,6 @@ package main;
 
 public class FictionBook extends Book implements Borrowable{
     private int borrowed;
-    private int borrowable;
   
     public FictionBook(String title, String author, int pages, int copies){
         super(title, author, pages, copies);
@@ -26,7 +25,7 @@ public class FictionBook extends Book implements Borrowable{
             borrowed = borrowed + 1;
             }
         }else {
-            System.out.println("Kirjaa " + title + " ei enään ole lainattavissa!");
+            System.out.println(" ei enään ole lainattavissa!");
         }
     }
 
