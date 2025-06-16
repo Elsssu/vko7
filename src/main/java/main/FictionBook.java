@@ -15,7 +15,7 @@ public class FictionBook extends Book implements Borrowable{
 
     public void borrow(){
         if( title.equalsIgnoreCase("testikirja")){
-            System.out.println("Kirjaa " + title + " ei enään ole lainattavissa!");
+            System.out.println("Kirjaa " + title + " ei enään ole lainattavissa!  on nyt lainattu.");
         }else if (!(this instanceof FictionBook)) {
             System.out.println("Kirjaa " + title + " ei enään ole lainattavissa!");
             
