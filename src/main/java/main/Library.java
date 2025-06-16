@@ -10,8 +10,18 @@ public class Library {
     }
 
     public void listBooks(){
+        int copyAmount = 0;
         for(Book book : books){
-            System.out.println();
+            book.displayInfo();
+            copyAmount = copyAmount + book.copyAmount();
+            if(book instanceof FictionBook){
+                String bookType = ((FictionBook)book).categorize();
+                System.out.println("Kirjan kategoria: " + bookType);
+            }else if(book instanceof NonFictionBook){
+                String bookType = ((NonFictionBook)book).categorize();
+                System.out.println("Kirjan kategoria: " + bookType);
+            }
         }
+        System.out.println("Kirjojen määrä kirjastossa: " + copyAmount);
     }    
 }

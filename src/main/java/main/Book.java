@@ -13,6 +13,10 @@ public abstract class Book {
         this.copies = copies;
     }
 
+    public int copyAmount(){
+        int copyAmount = copies;
+        return copyAmount;
+    }
     public void displayInfo(){
         System.out.println("Nimi: " + title + ", Kirjailija: " + author + ", Sivut: " + pages + ", Määrä: " + copies);
     }

@@ -11,5 +11,9 @@ public class NonFictionBook extends Book {
         String bookType = "Tietokirja";
         return bookType;
     }
+    public int copyAmount(){
+        int copyAmount = copies;
+        return copyAmount;
+    }
 }   
 

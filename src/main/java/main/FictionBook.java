@@ -10,4 +10,9 @@ public class FictionBook extends Book{
         String bookType = "Fiktiokirja";
         return bookType;
     }
+
+    public int copyAmount(){
+        int copyAmount = copies;
+        return copyAmount;
+    }
 }
