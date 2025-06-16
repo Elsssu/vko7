@@ -9,6 +9,9 @@ public class Library {
         books.add(kirja);
     }
 
+    public ArrayList<Book> getBooks(){
+        return books;
+    }
     public void listBooks(){
         int copyAmount = 0;
         for(Book book : books){
@@ -22,6 +25,6 @@ public class Library {
                 System.out.println("Kirjan kategoria: " + bookType);
             }
         }
-        System.out.println("Kirjojen määrä kirjastossa: " + copyAmount);
+        System.out.println("Kirjojen määrä kirjastossa on: " + copyAmount);
     }    
 }
