@@ -13,15 +13,6 @@ public class FictionBook extends Book implements Borrowable{
         return bookType;
     }
 
-    public int copyAmount(){
-        int copyAmount = copies;
-        return copyAmount;
-    }
-    
-    public String getTitle(){
-        return title;
-    }
-
     public void borrow(){
         if(copies > 0){
             this.copies = copies - 1;
@@ -40,5 +31,14 @@ public class FictionBook extends Book implements Borrowable{
             System.out.println("Kirja " + title + " on palautettu.");
         }
         this.copies = copies + 1;
+    }
+
+    public int copyAmount(){
+        int copyAmount = copies;
+        return copyAmount;
+    }
+    
+    public String getTitle(){
+        return title;
     }
 }
